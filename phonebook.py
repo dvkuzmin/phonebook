@@ -85,6 +85,7 @@ def search_entry() -> DataFrame:
         search_value = ''
         while search_value not in list(map(str.strip, entry[field].tolist())):
             search_value = input('Enter field value, which you want to find: ')
+            print('There is no entry with such parameter, try again')
 
         entry = entry[entry[field] == search_value]
         if len(entry) > 1:
